@@ -1,6 +1,6 @@
 {
-  "name": "react-ev",
-  "version": "0.0.1",
+  "name": "@antoncristo/react-ev",
+  "version": "0.0.2",
   "description": "react components library",
   "scripts": {
     "test": "exit 0",
@@ -25,5 +25,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/antoncristo"
+  }
 }
