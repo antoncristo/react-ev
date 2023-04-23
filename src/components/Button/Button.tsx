@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react';
 
 export interface ButtonProps {
-  label:string
-} 
+	label: string;
+}
 
-export const Button = (props:ButtonProps) => <button>{props.label}</button>
+export const Button = (props: ButtonProps) => <button>{props.label}</button>;
