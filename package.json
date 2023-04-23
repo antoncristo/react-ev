@@ -1,6 +1,6 @@
 {
   "name": "@antoncristo/react-ev",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react components library",
   "scripts": {
     "test": "exit 0",
