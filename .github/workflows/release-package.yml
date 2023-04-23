@@ -1,7 +1,10 @@
 name: Publish react-ev package to GitHub Packages
 on:
   release:
-    types: [published]
+    types: [created]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
