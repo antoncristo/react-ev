@@ -1,12 +1,14 @@
 {
 	"name": "@antoncristo/react-ev",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"description": "react components library",
 	"scripts": {
 		"test": "vitest -c ./src/vite.config.ts --run",
 		"rollup": "rollup -c",
 		"pretty": "prettier --write src/**/*.{ts,tsx,css}",
-		"lint": "eslint ./src --ext .jsx,.ts,.tsx"
+		"lint": "eslint ./src --ext .jsx,.ts,.tsx",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
 	},
 	"lint-staged": {
 		"**/*.{js,jsx,ts,tsx}": [
@@ -19,6 +21,13 @@
 		"@rollup/plugin-commonjs": "^24.1.0",
 		"@rollup/plugin-node-resolve": "^15.0.2",
 		"@rollup/plugin-typescript": "^11.1.0",
+		"@storybook/addon-essentials": "^7.0.7",
+		"@storybook/addon-interactions": "^7.0.7",
+		"@storybook/addon-links": "^7.0.7",
+		"@storybook/blocks": "^7.0.7",
+		"@storybook/react": "^7.0.7",
+		"@storybook/react-vite": "^7.0.7",
+		"@storybook/testing-library": "^0.0.14-next.2",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^14.0.0",
 		"@types/react": "^18.0.38",
@@ -34,12 +43,14 @@
 		"jest-styled-components": "^7.1.1",
 		"jsdom": "^21.1.1",
 		"lint-staged": "^13.2.1",
+		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"rollup": "^3.20.7",
 		"rollup-plugin-dts": "^5.3.0",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-postcss": "^4.0.2",
+		"storybook": "^7.0.7",
 		"styled-components": "^5.3.10",
 		"tslib": "^2.5.0",
 		"typescript": "^5.0.4",
