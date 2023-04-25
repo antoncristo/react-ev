@@ -1,6 +1,6 @@
 {
 	"name": "@antoncristo/react-ev",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"description": "react components library",
 	"scripts": {
 		"test": "vitest -c ./src/vite.config.ts --run",
@@ -55,6 +55,7 @@
 		"tslib": "^2.5.0",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.1",
+		"vite-tsconfig-paths": "^4.2.0",
 		"vitest": "^0.30.1"
 	},
 	"peerDependencies": {

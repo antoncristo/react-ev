@@ -1,3 +1,6 @@
+/* eslint-disable no-alert */
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
@@ -6,18 +9,21 @@ import { Button } from './Button';
 const meta = {
 	title: 'ReactEV/Button',
 	component: Button,
-	tags: ['autodocs'],
-	argTypes: {}
+	tags: ['autodocs']
 } satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
-	args: {
-		label: 'Button'
-	}
+	render: () => (
+		<Button
+			htmlAttributes={{ title: 'button story' }}
+			onClick={() => alert('click event')}
+		>
+			button
+		</Button>
+	)
 };
 
 // EXAMPLE: export const Secondary: Story = {

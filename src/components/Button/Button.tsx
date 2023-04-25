@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 import * as Styled from './Button.styled';
 
 export interface ButtonProps {
-	label: string;
+	onClick: () => void;
+	children: ReactNode;
+	htmlAttributes?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
-export const Button = (props: ButtonProps) => (
-	<Styled.Button>{props.label}</Styled.Button>
-);
+export const Button = (props: ButtonProps) => {
+	const { children, onClick, htmlAttributes } = props;
+	return (
+		<Styled.Button onClick={onClick} {...htmlAttributes}>
+			{children}
+		</Styled.Button>
+	);
+};

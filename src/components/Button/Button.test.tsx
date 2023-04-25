@@ -6,7 +6,8 @@ describe('<Button/> component', () => {
 	const buttonLabel = 'Test Button';
 
 	test('renders correctly', () => {
-		render(<Button label={buttonLabel} />);
+		const onClickHandler = () => null;
+		render(<Button onClick={onClickHandler}>{buttonLabel}</Button>);
 		const component = screen.getByText(buttonLabel);
 		expect(component).toBeInTheDocument();
 	});
