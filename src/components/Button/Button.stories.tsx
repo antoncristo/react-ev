@@ -2,8 +2,10 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { type DefaultTheme } from 'styled-components';
 
 import { Button } from './Button';
+import { ReactEVThemeProvider } from 'src/style/ThemeProvider';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
@@ -16,14 +18,16 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-	render: () => (
-		<Button
-			htmlAttributes={{ title: 'button story' }}
-			onClick={() => alert('click event')}
-		>
-			button
-		</Button>
-	)
+	render() {
+		return (
+			<Button
+				htmlAttributes={{ title: 'button story' }}
+				onClick={() => alert('click event')}
+			>
+				button
+			</Button>
+		);
+	}
 };
 
 // EXAMPLE: export const Secondary: Story = {

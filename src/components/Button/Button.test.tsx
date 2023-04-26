@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { customRender } from 'src/tests/setupTests';
 import { Button } from './Button';
 
 describe('<Button/> component', () => {
@@ -7,7 +8,7 @@ describe('<Button/> component', () => {
 
 	test('renders correctly', () => {
 		const onClickHandler = () => null;
-		render(<Button onClick={onClickHandler}>{buttonLabel}</Button>);
+		customRender(<Button onClick={onClickHandler}>{buttonLabel}</Button>);
 		const component = screen.getByText(buttonLabel);
 		expect(component).toBeInTheDocument();
 	});

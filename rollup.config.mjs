@@ -33,5 +33,21 @@ export default [
 		output: [{ file: 'dist/index.d.ts', format: 'esm' }],
 		plugins: [dts()],
 		external: [/\.(css|less|scss)$/]
+	},
+	{
+		input: 'src/style/index.ts',
+		output: [
+			{
+				file: 'dist/style/index.d.ts',
+				sourcemap: true
+			}
+		],
+		plugins: [
+			peerDepsExternal(),
+			resolve(),
+			commonjs(),
+			typescript({ tsconfig: './tsconfig.json' }),
+			postcss()
+		]
 	}
 ];
