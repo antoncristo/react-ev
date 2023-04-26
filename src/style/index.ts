@@ -1,1 +1,2 @@
-export { triadicPalette } from './style';
+export { defaultTheme } from './defaultTheme';
+export { ReactEVThemeProvider } from './ThemeProvider';

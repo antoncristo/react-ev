@@ -7,7 +7,7 @@ export default defineConfig({
 		name: 'ui-unit-tests',
 		globals: true,
 		environment: 'jsdom',
-		setupFiles: './src/tests/setupTests.ts',
+		setupFiles: './src/tests/setupTests.tsx',
 		css: {
 			include: /.+/
 		}

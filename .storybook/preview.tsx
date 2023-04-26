@@ -1,4 +1,7 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
+
+import { ReactEVThemeProvider } from '../src/style';
 
 const preview: Preview = {
 	parameters: {
@@ -9,7 +12,14 @@ const preview: Preview = {
 				date: /Date$/
 			}
 		}
-	}
+	},
+	decorators: [
+		Story => (
+			<ReactEVThemeProvider>
+				<Story />
+			</ReactEVThemeProvider>
+		)
+	]
 };
 
 export default preview;
