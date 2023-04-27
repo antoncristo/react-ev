@@ -1,12 +1,6 @@
 import 'styled-components';
-
-export type BaseColor = 'primary' | 'secondary' | 'ternary';
+import { type ReactEVDefaultTheme } from './defaultTheme';
 
 declare module 'styled-components' {
-	export interface DefaultTheme {
-		palette: {
-			base: Record<BaseColor, string>;
-			custom?: Record<string, string>;
-		};
-	}
+	export interface DefaultTheme extends ReactEVDefaultTheme {}
 }
