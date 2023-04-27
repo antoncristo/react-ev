@@ -2,16 +2,15 @@ import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 import * as Styled from './Button.styled';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	onClick: () => void;
 	children: ReactNode;
-	htmlAttributes?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export const Button = (props: ButtonProps) => {
-	const { children, onClick, htmlAttributes } = props;
+	const { children, onClick, ...rest } = props;
 	return (
-		<Styled.Button onClick={onClick} {...htmlAttributes}>
+		<Styled.Button onClick={onClick} {...rest}>
 			{children}
 		</Styled.Button>
 	);

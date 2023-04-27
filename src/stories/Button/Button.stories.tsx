@@ -2,29 +2,23 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { type DefaultTheme } from 'styled-components';
 
-import { Button } from './Button';
-import { ReactEVThemeProvider } from 'src/style/ThemeProvider';
+import { Button } from '../../components/Button/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
 	title: 'ReactEV/Button',
-	component: Button,
-	tags: ['autodocs']
+	component: Button
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Basic: Story = {
 	render() {
 		return (
-			<Button
-				htmlAttributes={{ title: 'button story' }}
-				onClick={() => alert('click event')}
-			>
-				button
+			<Button title='Simple Sutton' onClick={() => alert('click event')}>
+				Simple Button
 			</Button>
 		);
 	}
