@@ -5,12 +5,16 @@ export const Button = styled.button`
 	border: none;
 	border-radius: 6px;
 	margin: 0;
-	padding: 6px 8px;
-	font-weight: 600;
-	color: ${({ theme }) => theme.palette.base.primary};
-	background-color: ${({ theme }) => theme.palette.base.secondary};
+	padding: 6px 12px;
+	color: ${({ theme }) => theme.palette.base.white};
+	background-color: ${({ theme }) => theme.palette.base.black};
 
 	:hover {
-		box-shadow: -3px 0px 16px -2px ${({ theme }) => theme.palette.base.ternary};
+		color: ${({ theme }) => theme.palette.base.black};
+		background-color: ${({ theme }) => theme.palette.base.white};
+	}
+
+	:focus {
+		outline: 2px solid ${({ theme }) => theme.palette.base.black};
 	}
 `;
