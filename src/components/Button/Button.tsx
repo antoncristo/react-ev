@@ -1,9 +1,13 @@
-import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
+import React, {
+	type ButtonHTMLAttributes,
+	type ReactNode,
+	type MouseEventHandler
+} from 'react';
 
 import * as Styled from './Button.styled';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	onClick: () => void;
+	onClick: MouseEventHandler<HTMLButtonElement>;
 	children: ReactNode;
 }
 

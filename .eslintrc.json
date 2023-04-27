@@ -11,7 +11,11 @@
 			"rules": {
 				"@typescript-eslint/naming-convention": [
 					"error",
-					{ "selector": "variable", "format": ["camelCase", "PascalCase"] },
+					{
+						"selector": "variable",
+						"format": ["camelCase", "PascalCase"],
+						"leadingUnderscore": "allow"
+					},
 					{
 						"selector": "typeLike",
 						"format": ["PascalCase"]
