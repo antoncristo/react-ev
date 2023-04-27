@@ -1,6 +1,13 @@
-import { type DefaultTheme } from 'styled-components';
+export type BaseColor = 'primary' | 'secondary' | 'ternary';
 
-export const defaultTheme: DefaultTheme = {
+export interface ReactEVDefaultTheme {
+	palette: {
+		base: Record<BaseColor, string>;
+		custom?: Record<string, string>;
+	};
+}
+
+export const defaultTheme: ReactEVDefaultTheme = {
 	palette: {
 		base: {
 			primary: 'white',
