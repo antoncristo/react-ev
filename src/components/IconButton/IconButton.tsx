@@ -1,9 +1,7 @@
-import React, {
-	type ReactNode,
-	type ButtonHTMLAttributes,
-	type MouseEventHandler
-} from 'react';
+import React, { type ButtonHTMLAttributes, type MouseEventHandler } from 'react';
 import { Button } from 'src/components/Button';
+
+import { ICON_BUTTON_TEST_ID } from './IconButton.test';
 
 import * as Styled from './IconButton.styled';
 
@@ -19,7 +17,7 @@ export const IconButton = (props: IconButtonProps) => {
 	const { text, icon, onClick, iconPosition = 'end', gap, ...rest } = props;
 
 	return (
-		<Button onClick={onClick} {...rest}>
+		<Button data-testid={ICON_BUTTON_TEST_ID} onClick={onClick} {...rest}>
 			<Styled.IconButtonContainer>
 				<Styled.OrderedItem order={iconPosition === 'start' ? 3 : 1}>
 					{text}
