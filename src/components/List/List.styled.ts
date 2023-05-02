@@ -21,8 +21,3 @@ export const List = styled.ul<{ gap: string; height: string }>`
 		margin: 0;
 	}
 `;
-
-export const EndReachedMarker = styled.div`
-	height: 0.5px;
-	width: 100%;
-`;
