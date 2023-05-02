@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 export default [
 	{
@@ -25,7 +26,8 @@ export default [
 			resolve(),
 			commonjs(),
 			typescript({ tsconfig: './tsconfig.json' }),
-			postcss()
+			postcss(),
+			nodePolyfills()
 		]
 	},
 	{
