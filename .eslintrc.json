@@ -3,7 +3,12 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["plugin:react/recommended", "xo", "plugin:storybook/recommended"],
+	"extends": [
+		"plugin:react/recommended",
+		"xo",
+		"plugin:storybook/recommended",
+		"plugin:react-hooks/recommended"
+	],
 	"overrides": [
 		{
 			"extends": ["xo-typescript"],
@@ -43,7 +48,8 @@
 		"react/react-in-jsx-scope": 0,
 		"no-unused-expressions": "warn",
 		"no-unused-vars": "warn",
-		"no-duplicate-imports": "warn"
+		"no-duplicate-imports": "warn",
+		"no-implicit-coercion": "off"
 	},
 	"settings": {
 		"react": {
