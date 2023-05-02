@@ -22,8 +22,7 @@ export const List = <T extends object>(props: ListProps<T>) => {
 		onEndReachedHandler,
 		...rest
 	} = props;
-	const endOfListRef = useRef<HTMLDivElement>(null);
-	const isOnEndReachedUsed = Boolean(onEndReachedHandler);
+	const endOfListRef = useRef<HTMLLIElement>(null);
 
 	const intersectionObserver = useMemo(
 		() =>
@@ -36,21 +35,25 @@ export const List = <T extends object>(props: ListProps<T>) => {
 	);
 
 	useEffect(() => {
-		if (endOfListRef.current) {
+		if (endOfListRef.current && !!onEndReachedHandler) {
 			intersectionObserver.observe(endOfListRef.current);
 		}
 
 		return () => {
 			intersectionObserver.disconnect();
 		};
-	}, [intersectionObserver, endOfListRef]);
+	}, [intersectionObserver, endOfListRef, onEndReachedHandler]);
 
 	return (
 		<Styled.List data-testid='list_test_id' gap={gap} height={height} {...rest}>
-			{list.map(listItem => (
-				<li key={JSON.stringify(listItem[itemKey])}>{renderItem(listItem)}</li>
+			{list.map((listItem, index) => (
+				<li
+					ref={index === list.length - 1 ? endOfListRef : null}
+					key={JSON.stringify(listItem[itemKey])}
+				>
+					{renderItem(listItem)}
+				</li>
 			))}
-			{isOnEndReachedUsed && <Styled.EndReachedMarker ref={endOfListRef} />}
 		</Styled.List>
 	);
 };
