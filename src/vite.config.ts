@@ -10,7 +10,6 @@ export default defineConfig({
 		setupFiles: './src/tests/setupTests.tsx',
 		css: {
 			include: /.+/
-		},
-		exclude: ['**/scaffolder/**', '**/node_modules/**']
+		}
 	}
 });
