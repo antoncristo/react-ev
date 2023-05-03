@@ -8,6 +8,7 @@ export const Button = styled.button`
 	padding: 6px 12px;
 	color: ${({ theme }) => theme.palette.base.white};
 	background-color: ${({ theme }) => theme.palette.base.black};
+	font-family: ${({ theme }) => theme.typography.fontFamily};
 
 	:hover {
 		color: ${({ theme }) => theme.palette.base.black};
