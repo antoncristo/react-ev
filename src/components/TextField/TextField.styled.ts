@@ -13,6 +13,7 @@ export const TextField = styled.p<{
 	font-weight: ${({ fontWeight }) => fontWeight};
 	font-size: ${({ fontSize, theme }) => fontSize ?? theme.typography.fontSize};
 	line-height: ${({ lineHeight, theme }) => lineHeight ?? theme.typography.fontSize};
+	text-align: start;
 
 	overflow: hidden;
 	display: -webkit-box;
