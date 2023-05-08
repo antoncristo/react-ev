@@ -7,6 +7,7 @@ export const TextField = styled.p<{
 	lineHeight?: string;
 	numberOfLines?: number;
 }>`
+	margin: 0;
 	width: fit-content;
 	max-width: ${({ maxWidth }) => maxWidth};
 	font-family: ${({ theme }) => theme.typography.fontFamily};
