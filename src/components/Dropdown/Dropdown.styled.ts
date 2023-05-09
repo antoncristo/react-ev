@@ -15,7 +15,6 @@ export const Dropper = styled.div`
 
 export const AbsoluteDropdown = styled.div`
 	box-sizing: border-box;
-	box-sizing: border-box;
 	position: absolute;
 	width: fit-content;
 	box-shadow: 0px 0px 20px 0px ${({ theme }) => theme.palette.base.grey};
