@@ -1,6 +1,16 @@
 import { Colors } from './colors';
 
-export type BaseColor = 'primary' | 'secondary' | 'ternary' | 'black' | 'white' | 'grey';
+export type BaseColor =
+	| 'primary'
+	| 'secondary'
+	| 'ternary'
+	| 'black'
+	| 'white'
+	| 'grey'
+	| 'error'
+	| 'warning'
+	| 'success';
+
 export type FontWeight = 'normal' | 'bold';
 export interface Typography {
 	fontFamily: string;
@@ -25,7 +35,10 @@ export const defaultTheme: ReactEVDefaultTheme = {
 			ternary: Colors.TERNARY,
 			black: Colors.BLACK,
 			white: Colors.WHITE,
-			grey: Colors.GREY
+			grey: Colors.GREY,
+			error: Colors.ERROR,
+			warning: Colors.WARNING,
+			success: Colors.SUCCESS
 		}
 	},
 	typography: {
