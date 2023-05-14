@@ -1,12 +1,18 @@
-import React, { useId, type KeyboardEventHandler, type HTMLAttributes } from 'react';
+import React, {
+	useId,
+	type KeyboardEventHandler,
+	type HTMLAttributes,
+	type ChangeEventHandler
+} from 'react';
 
 import { CheckmarkIcon } from 'src/assets';
 
 import * as Styled from './Checkbox.styled';
 
 export interface CheckboxProps extends HTMLAttributes<HTMLDivElement> {
-	onChange: () => void;
+	onCheckboxSelect: (value: string) => void;
 	isChecked: boolean;
+	value: string;
 	inputID?: string;
 	width?: string;
 	colors?: {
@@ -17,13 +23,25 @@ export interface CheckboxProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Checkbox = (props: CheckboxProps) => {
-	const { isChecked, onChange, width = '12px', colors = {}, inputID, ...rest } = props;
+	const {
+		isChecked,
+		onCheckboxSelect,
+		width = '12px',
+		colors = {},
+		inputID,
+		value,
+		...rest
+	} = props;
 	const _inputID = useId();
 
 	const onCheckboxKeyDown: KeyboardEventHandler = event => {
 		if (event.key === 'Enter') {
-			onChange();
+			onCheckboxSelect(value);
 		}
+	};
+
+	const onInputChange: ChangeEventHandler<HTMLInputElement> = e => {
+		onCheckboxSelect(e.currentTarget.value);
 	};
 
 	return (
@@ -42,7 +60,13 @@ export const Checkbox = (props: CheckboxProps) => {
 			>
 				<CheckmarkIcon fill={colors.marker} width={width} height={width} />
 			</Styled.IconWrapper>
-			<input onChange={onChange} id={inputID ?? _inputID} type='checkbox' hidden />
+			<input
+				onChange={onInputChange}
+				value={value}
+				id={inputID ?? _inputID}
+				type='checkbox'
+				hidden
+			/>
 		</Styled.Checkbox>
 	);
 };
