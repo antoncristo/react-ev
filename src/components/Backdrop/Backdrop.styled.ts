@@ -6,9 +6,8 @@ export const Backdrop = styled.div<{ bgc?: string }>`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 1;
+	z-index: 200;
 
-	background-color: ${({ theme, bgc }) => bgc ?? theme.palette.base.grey};
-	backdrop-filter: blur(10px);
-	opacity: 0.6;
+	background-color: ${({ theme, bgc }) => bgc ?? theme.palette.base.white};
+	filter: blur(100px) opacity(0.9);
 `;
