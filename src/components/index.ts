@@ -8,3 +8,4 @@ export { Dropdown, type DropdownProps } from './Dropdown';
 export { Label, type LabelProps } from './Label';
 export { Input, type InputProps } from './Input';
 export { Checkbox, type CheckboxProps } from './Checkbox';
+export { Backdrop, type BackdropProps } from './Backdrop';
