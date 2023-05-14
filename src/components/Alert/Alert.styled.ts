@@ -30,7 +30,7 @@ export const Alert = styled.div<{ borderColor: AlertVariant }>`
 	}
 `;
 
-export const AlertBox = styled.div<{ borderColor: AlertVariant }>`
+export const AlertTextBox = styled.div<{ borderColor: AlertVariant }>`
 	box-sizing: border-box;
 	max-width: 90vw;
 	min-width: 300px;
@@ -60,4 +60,6 @@ export const ClearButton = styled(Button)<{ width: string }>`
 	margin-top: 12px;
 
 	background-color: transparent;
+
+	color: ${({ theme }) => theme.palette.base.black};
 `;

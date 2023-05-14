@@ -26,25 +26,26 @@ export const Alert = (props: AlertProps) => {
 	} = props;
 
 	const _maxWidth = textConfig.maxWidth ?? DEFAULT_MAX_WIDTH;
-	const _title = title ?? variant.toUpperCase();
 
 	return (
 		<>
 			<Backdrop bgc={backdropColor} />
 			<Styled.Alert data-testid='alert_test_id' borderColor={variant}>
-				<Styled.Title
-					maxWidth={_maxWidth}
-					fontWeight='bold'
-					fontSize='1.2rem'
-					textColor={variant}
-				>
-					{_title}
-				</Styled.Title>
-				<Styled.AlertBox borderColor={variant}>
+				{title ? (
+					<Styled.Title
+						maxWidth={_maxWidth}
+						fontWeight='bold'
+						fontSize='1.2rem'
+						textColor={variant}
+					>
+						{title}
+					</Styled.Title>
+				) : null}
+				<Styled.AlertTextBox borderColor={variant}>
 					<TextField {...textConfig} style={{ boxSizing: 'border-box' }}>
 						{text}
 					</TextField>
-				</Styled.AlertBox>
+				</Styled.AlertTextBox>
 				<Styled.ClearButton width={_maxWidth} onClick={() => null}>
 					<TextField fontWeight='bold'>{'OK'.toUpperCase()}</TextField>
 				</Styled.ClearButton>
