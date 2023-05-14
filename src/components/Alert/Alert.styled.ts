@@ -17,6 +17,7 @@ export const Alert = styled.div<{ borderColor: AlertVariant }>`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	color: ${({ theme }) => theme.palette.base.black};
 
 	button {
 		border: 2px solid transparent;
@@ -32,8 +33,10 @@ export const Alert = styled.div<{ borderColor: AlertVariant }>`
 export const AlertBox = styled.div<{ borderColor: AlertVariant }>`
 	box-sizing: border-box;
 	max-width: 90vw;
+	min-width: 300px;
 	max-height: 90vh;
-	background-color: ${({ theme }) => theme.palette.base.white};
+	background-color: ${({ theme }) => theme.palette.base.black};
+	color: ${({ theme }) => theme.palette.base.white};
 	padding: 8px 12px;
 
 	border: 2px solid
@@ -45,8 +48,6 @@ export const AlertBox = styled.div<{ borderColor: AlertVariant }>`
 
 export const Title = styled(TextField)<{ textColor: AlertVariant }>`
 	margin-bottom: 12px;
-	color: ${({ theme }) => theme.palette.base.white};
-	text-shadow: 1px 1px ${({ theme }) => theme.palette.base.black};
 	text-decoration: underline;
 	text-decoration-color: ${({ theme, textColor }) =>
 		textColor === 'default' ? 'transparent' : theme.palette.base[textColor]};
@@ -58,6 +59,5 @@ export const ClearButton = styled(Button)<{ width: string }>`
 	width: ${({ width }) => width};
 	margin-top: 12px;
 
-	text-shadow: 1px 1px ${({ theme }) => theme.palette.base.black};
 	background-color: transparent;
 `;

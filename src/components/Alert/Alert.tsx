@@ -26,7 +26,7 @@ export const Alert = (props: AlertProps) => {
 	} = props;
 
 	const _maxWidth = textConfig.maxWidth ?? DEFAULT_MAX_WIDTH;
-	const _title = title ?? variant === 'default' ? 'ALERT' : variant.toUpperCase();
+	const _title = title ?? variant.toUpperCase();
 
 	return (
 		<>
@@ -46,7 +46,7 @@ export const Alert = (props: AlertProps) => {
 					</TextField>
 				</Styled.AlertBox>
 				<Styled.ClearButton width={_maxWidth} onClick={() => null}>
-					<TextField>{'OK'.toUpperCase()}</TextField>
+					<TextField fontWeight='bold'>{'OK'.toUpperCase()}</TextField>
 				</Styled.ClearButton>
 			</Styled.Alert>
 		</>
