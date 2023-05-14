@@ -5,4 +5,6 @@ export { List, type ListProps } from './List';
 export { TextField, type TextFieldProps } from './TextField';
 export { HighestTooltip, type HighestTooltipProps } from './HighestTooltip';
 export { Dropdown, type DropdownProps } from './Dropdown';
+export { Label, type LabelProps } from './Label';
 export { Input, type InputProps } from './Input';
+export { Checkbox, type CheckboxProps } from './Checkbox';
