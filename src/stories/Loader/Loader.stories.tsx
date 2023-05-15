@@ -16,10 +16,11 @@ export const Basic: Story = {
 		return <Loader {...args} />;
 	},
 	args: {
-		size: 'small'
+		variant: 'lifeline'
 	},
 	argTypes: {
-		size: {
+		variant: {
+			options: ['lifeline', 'pulse'],
 			control: { type: 'radio' }
 		}
 	}
