@@ -4,11 +4,13 @@ export const Input = styled.input<{ isValid: boolean }>`
 	box-sizing: border-box;
 	width: fit-content;
 	height: fit-content;
-	margin: 0;
 	min-width: 0;
+
+	margin: 0;
 	padding: 6px 12px;
+
 	border: none;
-	border-radius: 6px;
+	border-radius: ${({ theme }) => theme.decorators.borderRadius};
 
 	${({ isValid, theme }) => css`
 		border: 2px solid ${isValid ? 'transparent' : theme.palette.base.error};

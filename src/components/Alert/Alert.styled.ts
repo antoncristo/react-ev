@@ -11,13 +11,14 @@ export const Alert = styled.div<{ borderColor: AlertVariant }>`
 	bottom: 0;
 	right: 0;
 	z-index: 201;
-	background-color: transparent;
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
+
 	color: ${({ theme }) => theme.palette.base.black};
+	background-color: transparent;
 
 	button {
 		border: 2px solid transparent;
@@ -32,22 +33,35 @@ export const Alert = styled.div<{ borderColor: AlertVariant }>`
 
 export const AlertTextBox = styled.div<{ borderColor: AlertVariant }>`
 	box-sizing: border-box;
+
 	max-width: 90vw;
 	min-width: 300px;
 	max-height: 90vh;
+	padding: 8px 12px;
+
 	background-color: ${({ theme }) => theme.palette.base.black};
 	color: ${({ theme }) => theme.palette.base.white};
-	padding: 8px 12px;
 
 	border: 2px solid
 		${({ theme, borderColor }) =>
 			borderColor === 'default' ? 'transparent' : theme.palette.base[borderColor]};
-	border-radius: 6px;
-	box-shadow: 0px 0px 20px 0px ${({ theme }) => theme.palette.base.grey};
+	border-radius: ${({ theme }) => theme.decorators.borderRadius};
+	box-shadow: ${({ theme }) => theme.decorators.boxShadow};
+
+	animation: pop 0.2s ease-in;
+	@keyframes pop {
+		from {
+			transform: scale(0);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
 `;
 
 export const Title = styled(TextField)<{ textColor: AlertVariant }>`
 	margin-bottom: 12px;
+
 	text-decoration: underline;
 	text-decoration-color: ${({ theme, textColor }) =>
 		textColor === 'default' ? 'transparent' : theme.palette.base[textColor]};
@@ -56,10 +70,10 @@ export const Title = styled(TextField)<{ textColor: AlertVariant }>`
 export const ClearButton = styled(Button)<{ width: string }>`
 	display: flex;
 	justify-content: center;
+
 	width: ${({ width }) => width};
 	margin-top: 12px;
 
 	background-color: transparent;
-
 	color: ${({ theme }) => theme.palette.base.black};
 `;
