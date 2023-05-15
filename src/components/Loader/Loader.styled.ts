@@ -1,48 +1,62 @@
 import styled, { keyframes } from 'styled-components';
-import { type LoaderSize } from './Loader';
 
-const loaderSize: Record<LoaderSize, number> = {
-	large: 48,
-	medium: 32,
-	small: 16
-};
+export const LifelineContainer = styled.div<{ bgc?: string; pc?: string }>`
+	width: fit-content;
+	height: fit-content;
 
-const rotateClockwise = keyframes`
-  0% { transform: rotate(0) };
-  100% { transform: rotate(360deg) };
+	.loading svg polyline {
+		fill: none;
+		stroke-width: 3;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.loading svg polyline#back {
+		fill: none;
+		stroke: ${({ theme, bgc }) => bgc ?? 'transparent'};
+	}
+
+	.loading svg polyline#front {
+		fill: none;
+		stroke: ${({ theme, pc }) => pc ?? theme.palette.base.primary};
+		stroke-dasharray: 48, 144;
+		stroke-dashoffset: 192;
+		animation: lifeline 1.2s linear infinite;
+	}
+
+	@keyframes lifeline {
+		72.5% {
+			opacity: 0.6;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
 `;
 
-export const Loader = styled.div<{ size: LoaderSize }>`
-	position: relative;
-	width: ${({ size }) => loaderSize[size]}px;
-	aspect-ratio: 1/1;
+export const PulseContainer = styled.div<{ bgc?: string }>`
+	width: 18px;
+	height: 18px;
 	border-radius: 50%;
-	animation-name: ${rotateClockwise};
-	animation-duration: 1.2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
 	background-color: transparent;
-`;
+	animation-name: pulse;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
 
-export const Line = styled.div<{ degree: number }>`
-	position: absolute;
-	left: 45%;
-	width: 10%;
-	height: 100%;
-	background-color: ${({ theme }) => theme.palette.base.white};
-	border-radius: 3px;
-	transform: rotate(${({ degree }) => degree}deg);
-	box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.palette.base.black};
-`;
+	@keyframes pulse {
+		0% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 ${({ theme, bgc }) => bgc ?? theme.palette.base.primary};
+		}
 
-export const InnerLoader = styled.div`
-	position: absolute;
-	width: 60%;
-	aspect-ratio: 1/1;
-	left: 20%;
-	top: 20%;
-	border-radius: 50%;
-	background: ${({ theme }) => theme.palette.base.primary};
-	opacity: 0.3;
-	box-shadow: inset 0px 0px 6px 0px ${({ theme }) => theme.palette.base.black};
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+		}
+
+		100% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		}
+	}
 `;

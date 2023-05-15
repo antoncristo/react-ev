@@ -2,23 +2,28 @@ import React from 'react';
 
 import * as Styled from './Loader.styled';
 
-export type LoaderSize = 'small' | 'medium' | 'large';
-
 export interface LoaderProps {
-	size?: LoaderSize;
+	bgc?: string;
+	pc?: string;
+	variant?: 'lifeline' | 'pulse';
 }
 
-export const Loader = ({ size = 'small' }: LoaderProps) => (
-	<Styled.Loader data-testid='loader_test_id' size={size}>
-		<Styled.Line degree={0} />
-		<Styled.Line degree={30} />
-		<Styled.Line degree={60} />
-		<Styled.Line degree={90} />
-		<Styled.Line degree={120} />
-		<Styled.Line degree={150} />
-		<Styled.InnerLoader>
-			<Styled.Line degree={90} />
-			<Styled.Line degree={180} />
-		</Styled.InnerLoader>
-	</Styled.Loader>
-);
+export const Loader = ({ variant = 'lifeline', bgc, pc }: LoaderProps) =>
+	variant === 'lifeline' ? (
+		<Styled.LifelineContainer data-testid='loader_test_id' bgc={bgc} pc={pc}>
+			<div className='loading'>
+				<svg width='64px' height='48px'>
+					<polyline
+						points='0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24'
+						id='back'
+					></polyline>
+					<polyline
+						points='0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24'
+						id='front'
+					></polyline>
+				</svg>
+			</div>
+		</Styled.LifelineContainer>
+	) : (
+		<Styled.PulseContainer data-testid='loader_test_id' bgc={bgc} />
+	);
