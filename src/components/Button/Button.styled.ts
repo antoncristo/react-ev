@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
 	cursor: pointer;
-	border: none;
-	border-radius: 6px;
+	font-family: ${({ theme }) => theme.typography.fontFamily};
 	margin: 0;
+
+	border: none;
+	border-radius: ${({ theme }) => theme.decorators.borderRadius};
 	padding: 6px 12px;
+
 	color: ${({ theme }) => theme.palette.base.white};
 	background-color: ${({ theme }) => theme.palette.base.black};
-	font-family: ${({ theme }) => theme.typography.fontFamily};
 
 	:hover {
 		color: ${({ theme }) => theme.palette.base.black};

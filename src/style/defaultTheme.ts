@@ -24,6 +24,10 @@ export interface ReactEVDefaultTheme {
 		base: Record<BaseColor, string>;
 		custom?: Record<string, string>;
 	};
+	decorators: {
+		boxShadow: string;
+		borderRadius: string;
+	};
 	typography: Typography;
 }
 
@@ -46,5 +50,9 @@ export const defaultTheme: ReactEVDefaultTheme = {
 		fontWeight: 'bold',
 		fontSize: '1rem',
 		lineHeight: '1.2rem'
+	},
+	decorators: {
+		boxShadow: `0px 0px 20px 0px ${Colors.GREY}`,
+		borderRadius: '6px'
 	}
 };
