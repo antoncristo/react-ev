@@ -3,14 +3,15 @@ export interface Cell<T> {
 }
 
 export interface Column<T> {
-	accessor: keyof T;
+	columnId: keyof T;
 	header: string | JSX.Element;
 	cell: Cell<T>;
 	maxWidth?: string;
+	width?: string;
 }
 
 export interface TableColumn<T> {
-	accessor: keyof T;
+	columnId: keyof T;
 	header: string | JSX.Element;
 	render: JSX.Element;
 }

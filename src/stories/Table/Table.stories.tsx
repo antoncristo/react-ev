@@ -15,33 +15,44 @@ type Story = StoryObj<typeof Table>;
 interface StoryList {
 	id: string;
 	storyName: string;
+	attr: string;
 }
 
 const storyData: StoryList[] = [
-	{ id: '1', storyName: 'list item 1' },
-	{ id: '2', storyName: 'list item 2' },
-	{ id: '3', storyName: 'list item 3' },
-	{ id: '4', storyName: 'list item 4' },
-	{ id: '5', storyName: 'list item 5' },
-	{ id: '6', storyName: 'list item 6' },
-	{ id: '7', storyName: 'list item 7' },
-	{ id: '8', storyName: 'list item 8' }
+	{ id: '1', storyName: 'list item 1', attr: 'a' },
+	{ id: '2', storyName: 'list item 2', attr: 'b' },
+	{ id: '3', storyName: 'list item 3', attr: 'c' },
+	{ id: '4', storyName: 'list item 4', attr: 'd' },
+	{ id: '5', storyName: 'list item 5', attr: 'e' },
+	{ id: '6', storyName: 'list item 6', attr: 'f' },
+	{ id: '7', storyName: 'list item 7', attr: 'g' },
+	{ id: '8', storyName: 'list item 8', attr: 'h' }
 ];
 
 const columns: Array<Column<StoryList>> = [
 	{
-		accessor: 'id',
+		columnId: 'id',
 		header: 'ID',
 		cell: {
 			init: (item: StoryList) => <div key={item.id}>{item.id}</div>
-		}
+		},
+		width: '30%'
 	},
 	{
-		accessor: 'storyName',
+		columnId: 'storyName',
 		header: 'STN',
 		cell: {
 			init: (item: StoryList) => <div key={item.storyName}>{item.storyName}</div>
-		}
+		},
+		width: '40%'
+	},
+	{
+		columnId: 'attr',
+		header: 'ATTR',
+		cell: {
+			init: (item: StoryList) => <div key={item.attr}>{item.attr}</div>
+		},
+		width: '30%'
 	}
 ];
 
