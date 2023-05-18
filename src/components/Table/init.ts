@@ -1,3 +1,4 @@
+import { type CSSProperties } from 'react';
 import { type Row, type Column, type TableColumn } from './Table.types';
 
 const initColumns = <T extends object>(
@@ -7,11 +8,11 @@ const initColumns = <T extends object>(
 	const _columns: Array<TableColumn<T>> = [];
 
 	Object.keys(rowDataItem).forEach(key => {
-		const _columnByKey = columns.find(columnConfig => columnConfig.accessor === key);
+		const _columnByKey = columns.find(columnConfig => columnConfig.columnId === key);
 
 		if (_columnByKey) {
 			_columns.push({
-				accessor: _columnByKey.accessor,
+				columnId: _columnByKey.columnId,
 				header: _columnByKey.header,
 				render: _columnByKey.cell.init(rowDataItem)
 			});
@@ -41,7 +42,28 @@ const initRows = <T extends object>(
 };
 
 const getHeaders = <T extends object>(columns: Array<Column<T>>) =>
-	columns.map(col => col.header);
+	columns.map(col => {
+		return { cell: col.header, columnId: col.columnId };
+	});
+
+const getColumnWidths = <T extends object>(columns: Array<Column<T>>) => {
+	const columnStyle: Record<string, CSSProperties> = {};
+
+	columns.forEach(col => {
+		columnStyle[col.columnId as string] = {};
+
+		if (col.maxWidth) {
+			columnStyle[col.columnId as string].maxWidth = col.maxWidth;
+		}
+
+		if (col.width) {
+			columnStyle[col.columnId as string].width = col.width;
+		}
+	});
+
+	return <T extends object>(columnId: Column<T>['columnId']) =>
+		columnStyle[columnId as string];
+};
 
 export const initTable = <T extends object>(
 	data: readonly T[],
@@ -49,7 +71,7 @@ export const initTable = <T extends object>(
 ) => {
 	return {
 		rows: initRows(data, columns),
-		headers: getHeaders(columns)
-		// Implement column max width
+		headers: getHeaders(columns),
+		widthConfig: getColumnWidths(columns)
 	};
 };

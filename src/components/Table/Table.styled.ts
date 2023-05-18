@@ -11,7 +11,7 @@ export const Table = styled.div`
 			display: flex;
 
 			.th {
-				flex: 1;
+				width: 100%;
 			}
 		}
 	}
@@ -23,7 +23,7 @@ export const Table = styled.div`
 			display: flex;
 
 			.td {
-				flex: 1;
+				width: 100%;
 			}
 		}
 	}
