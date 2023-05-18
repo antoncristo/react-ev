@@ -1,8 +1,6 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable @typescript-eslint/ban-types */
 import { type Row, type Column, type TableColumn } from './Table.types';
 
-const initColumns = <T extends Object>(
+const initColumns = <T extends object>(
 	rowDataItem: T,
 	columns: Array<Column<T>>
 ): Array<TableColumn<T>> => {
@@ -23,7 +21,7 @@ const initColumns = <T extends Object>(
 	return _columns;
 };
 
-const initRows = <T extends Object>(
+const initRows = <T extends object>(
 	data: readonly T[],
 	columns: Array<Column<T>>
 ): Array<Row<T>> => {
@@ -42,10 +40,10 @@ const initRows = <T extends Object>(
 	return _tableRows;
 };
 
-const getHeaders = <T extends Object>(columns: Array<Column<T>>) =>
+const getHeaders = <T extends object>(columns: Array<Column<T>>) =>
 	columns.map(col => col.header);
 
-export const initTable = <T extends Object>(
+export const initTable = <T extends object>(
 	data: readonly T[],
 	columns: Array<Column<T>>
 ) => {

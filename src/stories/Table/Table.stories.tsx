@@ -33,18 +33,14 @@ const columns: Array<Column<StoryList>> = [
 		accessor: 'id',
 		header: 'ID',
 		cell: {
-			render: (item: StoryList) => <div key={item.id}>{item.id}</div>
+			init: (item: StoryList) => <div key={item.id}>{item.id}</div>
 		}
 	},
 	{
 		accessor: 'storyName',
 		header: 'STN',
 		cell: {
-			render: (item: StoryList) => (
-				<div style={{ width: '100%' }} key={item.storyName}>
-					{item.storyName}
-				</div>
-			)
+			init: (item: StoryList) => <div key={item.storyName}>{item.storyName}</div>
 		}
 	}
 ];
