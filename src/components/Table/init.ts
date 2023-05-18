@@ -15,7 +15,7 @@ const initColumns = <T extends Object>(
 			_columns.push({
 				accessor: _columnByKey.accessor,
 				header: _columnByKey.header,
-				render: _columnByKey.cell.render(rowDataItem)
+				render: _columnByKey.cell.init(rowDataItem)
 			});
 		}
 	});

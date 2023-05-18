@@ -1,12 +1,12 @@
 export interface Cell<T> {
-	render: (cell: T) => JSX.Element;
-	maxWidth?: string;
+	init: (cell: T) => JSX.Element;
 }
 
 export interface Column<T> {
 	accessor: keyof T;
 	header: string | JSX.Element;
 	cell: Cell<T>;
+	maxWidth?: string;
 }
 
 export interface TableColumn<T> {
