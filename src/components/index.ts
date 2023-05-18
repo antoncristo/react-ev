@@ -10,4 +10,4 @@ export { Input, type InputProps } from './Input';
 export { Checkbox, type CheckboxProps } from './Checkbox';
 export { Backdrop, type BackdropProps } from './Backdrop';
 export { Alert, type AlertProps } from './Alert';
-export { Table, type TableProps } from './Table';
+export { Table, type TableProps, type Column, type Row } from './Table';
