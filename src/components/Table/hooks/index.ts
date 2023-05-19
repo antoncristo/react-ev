@@ -1,0 +1,1 @@
+export { useInitTable } from './useInitTable';

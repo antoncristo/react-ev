@@ -44,7 +44,8 @@ const columns: Array<Column<StoryList>> = [
 		cell: {
 			init: (item: StoryList) => <div key={item.attr}>{item.attr}</div>
 		},
-		width: '80%'
+		width: '80%',
+		isSortable: true
 	},
 	{
 		columnId: 'id',
@@ -52,13 +53,14 @@ const columns: Array<Column<StoryList>> = [
 		cell: {
 			init: (item: StoryList) => <div key={item.id}>{item.id}</div>
 		},
-		width: '20%'
+		width: '20%',
+		isSortable: true
 	}
 ];
 
 export const Basic: Story = {
-	render(args) {
-		return <Table {...args} data={storyData} columns={columns} />;
+	render() {
+		return <Table data={storyData} columns={columns} />;
 	},
 	args: {},
 	argTypes: {}

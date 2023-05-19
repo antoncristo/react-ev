@@ -8,6 +8,7 @@ export interface Column<T> {
 	cell: Cell<T>;
 	maxWidth?: string;
 	width?: string;
+	isSortable?: boolean;
 }
 
 export interface TableColumn<T> {
@@ -19,4 +20,18 @@ export interface TableColumn<T> {
 export interface Row<T> {
 	rowIndex: number;
 	columns: Array<TableColumn<T>>;
+}
+
+export type SortDirection = 'asc' | 'desc';
+
+export interface Sorter<T extends object> {
+	columnId: keyof T | undefined;
+	direction: SortDirection;
+}
+
+export interface ColumnSortArguments<T extends object> {
+	columns: Array<Column<T>>;
+	sortHandler?: (sortBy: Partial<Sorter<T>>) => void;
+	defaultColumnId?: keyof T;
+	defaultDirection?: SortDirection;
 }
