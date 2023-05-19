@@ -7,16 +7,12 @@ const initColumns = <T extends object>(
 ): Array<TableColumn<T>> => {
 	const _columns: Array<TableColumn<T>> = [];
 
-	Object.keys(rowDataItem).forEach(key => {
-		const _columnByKey = columns.find(columnConfig => columnConfig.columnId === key);
-
-		if (_columnByKey) {
-			_columns.push({
-				columnId: _columnByKey.columnId,
-				header: _columnByKey.header,
-				render: _columnByKey.cell.init(rowDataItem)
-			});
-		}
+	columns.forEach(column => {
+		_columns.push({
+			columnId: column.columnId,
+			header: column.header,
+			render: column.cell.init(rowDataItem)
+		});
 	});
 
 	return _columns;

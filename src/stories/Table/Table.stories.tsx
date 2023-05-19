@@ -31,20 +31,12 @@ const storyData: StoryList[] = [
 
 const columns: Array<Column<StoryList>> = [
 	{
-		columnId: 'id',
-		header: 'ID',
-		cell: {
-			init: (item: StoryList) => <div key={item.id}>{item.id}</div>
-		},
-		width: '30%'
-	},
-	{
 		columnId: 'storyName',
 		header: 'STN',
 		cell: {
 			init: (item: StoryList) => <div key={item.storyName}>{item.storyName}</div>
 		},
-		width: '40%'
+		width: '60%'
 	},
 	{
 		columnId: 'attr',
@@ -52,7 +44,15 @@ const columns: Array<Column<StoryList>> = [
 		cell: {
 			init: (item: StoryList) => <div key={item.attr}>{item.attr}</div>
 		},
-		width: '30%'
+		width: '80%'
+	},
+	{
+		columnId: 'id',
+		header: 'ID',
+		cell: {
+			init: (item: StoryList) => <div key={item.id}>{item.id}</div>
+		},
+		width: '20%'
 	}
 ];
 
