@@ -1,7 +1,7 @@
 import { type CSSProperties } from 'react';
-import { type Row, type Column, type TableColumn } from './Table.types';
+import { type Row, type Column, type TableColumn } from '../Table.types';
 
-const initColumns = <T extends object>(
+export const initColumns = <T extends object>(
 	rowDataItem: T,
 	columns: Array<Column<T>>
 ): Array<TableColumn<T>> => {
@@ -18,7 +18,7 @@ const initColumns = <T extends object>(
 	return _columns;
 };
 
-const initRows = <T extends object>(
+export const initRows = <T extends object>(
 	data: readonly T[],
 	columns: Array<Column<T>>
 ): Array<Row<T>> => {
@@ -37,12 +37,12 @@ const initRows = <T extends object>(
 	return _tableRows;
 };
 
-const getHeaders = <T extends object>(columns: Array<Column<T>>) =>
+export const initHeaders = <T extends object>(columns: Array<Column<T>>) =>
 	columns.map(col => {
 		return { cell: col.header, columnId: col.columnId };
 	});
 
-const getColumnWidths = <T extends object>(columns: Array<Column<T>>) => {
+export const initColumnWidths = <T extends object>(columns: Array<Column<T>>) => {
 	const columnStyle: Record<string, CSSProperties> = {};
 
 	columns.forEach(col => {
@@ -59,15 +59,4 @@ const getColumnWidths = <T extends object>(columns: Array<Column<T>>) => {
 
 	return <T extends object>(columnId: Column<T>['columnId']) =>
 		columnStyle[columnId as string];
-};
-
-export const initTable = <T extends object>(
-	data: readonly T[],
-	columns: Array<Column<T>>
-) => {
-	return {
-		rows: initRows(data, columns),
-		headers: getHeaders(columns),
-		widthConfig: getColumnWidths(columns)
-	};
 };
