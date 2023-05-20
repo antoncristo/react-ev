@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/indent */
 import styled from 'styled-components';
 import { type AlertVariant } from './Alert.types';
 import { TextField } from '../TextField';

@@ -1,6 +1,11 @@
 import React, { type HTMLAttributes } from 'react';
 
-import { type Sorter, type Column, type SortDirection } from './Table.types';
+import {
+	type Sorter,
+	type Column,
+	type SortDirection,
+	type SelectedRow
+} from './Table.types';
 import { useInitTable } from './hooks';
 
 import * as Styled from './Table.styled';
@@ -13,17 +18,24 @@ export interface TableProps<T extends object> extends HTMLAttributes<HTMLDivElem
 		defaultSortBy?: keyof T;
 		defaultDirection?: SortDirection;
 	};
+	selectSetup?: (selectedRow: SelectedRow<T>) => void;
 }
 
 export const Table = <T extends object>(props: TableProps<T>) => {
-	const { data, columns, sortSetup, ...rest } = props;
-
-	const { rows, headers, styleConfig, sortConfig } = useInitTable(data, columns, {
+	const { data, columns, sortSetup, selectSetup, ...rest } = props;
+	const sortArgs = {
 		columns,
 		defaultColumnId: sortSetup?.defaultSortBy,
 		sortHandler: sortSetup?.handler,
 		defaultDirection: sortSetup?.defaultDirection
-	});
+	};
+
+	const { rows, headers, styleConfig, sortConfig } = useInitTable(
+		data,
+		columns,
+		sortArgs,
+		selectSetup
+	);
 	const { columnSortHandler } = sortConfig;
 
 	return (
@@ -44,7 +56,7 @@ export const Table = <T extends object>(props: TableProps<T>) => {
 			</div>
 			<div className='tbody'>
 				{rows.map(row => (
-					<div className='body-row' key={row.rowIndex}>
+					<div className='body-row' onClick={row.onSelect} key={row.rowIndex}>
 						{row.columns.map((cell, index) => (
 							<div
 								className='td'

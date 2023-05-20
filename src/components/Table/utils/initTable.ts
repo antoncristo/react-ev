@@ -1,5 +1,10 @@
 import { type CSSProperties } from 'react';
-import { type Row, type Column, type TableColumn } from '../Table.types';
+import {
+	type Row,
+	type Column,
+	type TableColumn,
+	type SelectedRow
+} from '../Table.types';
 
 export const initColumns = <T extends object>(
 	rowDataItem: T,
@@ -20,7 +25,8 @@ export const initColumns = <T extends object>(
 
 export const initRows = <T extends object>(
 	data: readonly T[],
-	columns: Array<Column<T>>
+	columns: Array<Column<T>>,
+	select?: (selectedRow: SelectedRow<T>) => void
 ): Array<Row<T>> => {
 	const _tableRows: Array<Row<T>> = [];
 
@@ -29,7 +35,15 @@ export const initRows = <T extends object>(
 	}
 
 	data.forEach((rowDataItem: T, rowIndex: number) => {
-		const _row: Row<T> = { rowIndex, columns: initColumns(rowDataItem, columns) };
+		const _row: Row<T> = {
+			rowIndex,
+			onSelect: select
+				? () => {
+						select({ data: rowDataItem, rowIndex });
+				  }
+				: () => null,
+			columns: initColumns(rowDataItem, columns)
+		};
 
 		_tableRows.push(_row);
 	});

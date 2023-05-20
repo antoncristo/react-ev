@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React, { useRef, type HTMLAttributes, useEffect, useMemo } from 'react';
 
 import * as Styled from './List.styled';

@@ -35,7 +35,8 @@
 				"@typescript-eslint/comma-dangle": "off",
 				"@typescript-eslint/no-unsafe-call": "off",
 				"@typescript-eslint/consistent-type-definitions": "off",
-				"@typescript-eslint/ban-types": "off"
+				"@typescript-eslint/ban-types": "off",
+				"@typescript-eslint/indent": "off"
 			}
 		}
 	],
@@ -52,7 +53,9 @@
 		"no-duplicate-imports": "warn",
 		"no-implicit-coercion": "off",
 		"no-negated-condition": "off",
-		"arrow-body-style": "off"
+		"arrow-body-style": "off",
+		"no-mixed-spaces-and-tabs": "off",
+		"indent": "off"
 	},
 	"settings": {
 		"react": {

@@ -1,3 +1,5 @@
+import { type MouseEventHandler } from 'react';
+
 export interface Cell<T> {
 	init: (cell: T) => JSX.Element;
 }
@@ -20,6 +22,7 @@ export interface TableColumn<T> {
 export interface Row<T> {
 	rowIndex: number;
 	columns: Array<TableColumn<T>>;
+	onSelect: MouseEventHandler;
 }
 
 export type SortDirection = 'asc' | 'desc';
@@ -34,4 +37,9 @@ export interface ColumnSortArguments<T extends object> {
 	sortHandler?: (sortBy: Partial<Sorter<T>>) => void;
 	defaultColumnId?: keyof T;
 	defaultDirection?: SortDirection;
+}
+
+export interface SelectedRow<T extends object> {
+	data: T;
+	rowIndex: number;
 }
