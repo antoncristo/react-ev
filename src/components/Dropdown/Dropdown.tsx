@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React, { type CSSProperties, useState, type HTMLAttributes } from 'react';
 
 import { List, type ListProps } from '../List';
