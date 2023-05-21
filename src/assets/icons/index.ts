@@ -1,2 +1,2 @@
-export { ColorsIcon } from './colorsIcon';
-export { CheckmarkIcon } from './checkmarkIcon';
+export { ColorsIcon } from './colors-icon';
+export { CheckmarkIcon } from './checkmark-icon';

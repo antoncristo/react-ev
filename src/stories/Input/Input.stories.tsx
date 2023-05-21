@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from '../../components/Input';
+import { Input } from '../../component/input';
 
 const meta = {
 	title: 'ReactEV/Input',

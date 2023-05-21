@@ -1,1 +1,0 @@
-export { useInitTable } from './useInitTable';

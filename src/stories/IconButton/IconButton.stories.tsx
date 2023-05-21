@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { IconButton } from '../../components/IconButton';
+import { IconButton } from '../../component/icon-button';
 import { ColorsIcon } from 'src/assets';
 
 const meta = {

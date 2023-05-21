@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { HighestTooltip } from '../../components/HighestTooltip';
+import { HighestTooltip } from '../../component/highest-tooltip';
 
 const meta = {
 	title: 'ReactEV/HighestTooltip',

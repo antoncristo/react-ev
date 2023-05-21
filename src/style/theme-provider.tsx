@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { type ReactEVDefaultTheme, defaultTheme } from './defaultTheme';
+import { type ReactEVDefaultTheme, defaultTheme } from './default-theme';
 
 export interface ReactEVThemeProviderProps {
 	children: ReactNode;

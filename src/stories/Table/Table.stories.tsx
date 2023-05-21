@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Table } from '../../components/Table';
-import { type Column } from 'src/components/Table/Table.types';
+import { Table } from '../../component/table';
+import { type Column } from 'src/component/table/table.types';
 
 const meta = {
 	title: 'ReactEV/Table',

@@ -3,7 +3,7 @@ import React, { type ReactNode } from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
 import { vi } from 'vitest';
-import { ReactEVThemeProvider } from '../../src/style';
+import { ReactEVThemeProvider } from '../style';
 
 const MockIntersectionObserver = vi.fn(() => ({
 	disconnect: vi.fn(),
