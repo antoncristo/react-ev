@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Dropdown } from '../../component/dropdown';
+import { Dropdown } from '../../components/dropdown';
 
 interface StoryList {
 	id: string;
