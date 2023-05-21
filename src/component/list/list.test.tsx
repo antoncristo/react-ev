@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-import { customRender } from 'src/tests/setupTests';
+import { customRender } from 'src/tests/setup-tests';
 import { List } from './list';
 
 interface TestInterface {

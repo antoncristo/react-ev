@@ -1,2 +1,2 @@
-export { ReactEVThemeProvider } from './ThemeProvider';
-export { type BaseColor, type ReactEVDefaultTheme, defaultTheme } from './defaultTheme';
+export { ReactEVThemeProvider } from './theme-provider';
+export { type BaseColor, type ReactEVDefaultTheme, defaultTheme } from './default-theme';
