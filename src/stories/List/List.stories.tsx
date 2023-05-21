@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { List } from '../../component/list';
+import { List } from '../../components/list';
 
 interface StoryList {
 	id: string;

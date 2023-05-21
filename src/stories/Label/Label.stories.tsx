@@ -3,8 +3,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Label } from '../../component/label';
-import { Checkbox } from 'src/component/checkbox';
+import { Label } from '../../components/label';
+import { Checkbox } from 'src/components/checkbox';
 
 const meta = {
 	title: 'ReactEV/Label',

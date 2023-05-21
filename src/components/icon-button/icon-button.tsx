@@ -1,5 +1,5 @@
 import React, { type ButtonHTMLAttributes, type MouseEventHandler } from 'react';
-import { Button } from 'src/component/button';
+import { Button } from 'src/components/button';
 
 import * as Styled from './icon-button.styled';
 

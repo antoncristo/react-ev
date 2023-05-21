@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Loader } from '../../component/loader';
+import { Loader } from '../../components/loader';
 
 const meta = {
 	title: 'ReactEV/Loader',
