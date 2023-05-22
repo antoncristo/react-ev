@@ -1,5 +1,4 @@
 /* eslint-disable no-alert */
-/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -22,7 +21,9 @@ export const Basic: Story = {
 					inputID='checkbox'
 					isChecked
 					value='checkbox 1'
-					onCheckboxSelect={value => alert(value + ' clicked')}
+					onCheckboxSelect={value => {
+						alert(value + ' clicked');
+					}}
 					style={{ margin: '3px 10px 0 0' }}
 				/>
 				<Label htmlFor='checkbox' {...args} />
