@@ -9,7 +9,7 @@ export const TextField = styled.p<{
 }>`
 	box-sizing: border-box;
 	margin: 0;
-	width: fit-content;
+	width: 100%;
 	max-width: ${({ maxWidth }) => maxWidth};
 	font-family: ${({ theme }) => theme.typography.fontFamily};
 	font-weight: ${({ fontWeight }) => fontWeight};
