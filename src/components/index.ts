@@ -1,3 +1,4 @@
+export { AccordionItem, type AccordionItemProps } from './accordion-item';
 export { Alert, type AlertProps } from './alert';
 export { Backdrop, type BackdropProps } from './backdrop';
 export { Button, type ButtonProps } from './button';
