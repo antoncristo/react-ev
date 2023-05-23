@@ -3,12 +3,14 @@ import React, {
 	type HTMLAttributes,
 	type MouseEventHandler,
 	type ReactNode,
+	useLayoutEffect,
+	useState,
 	cloneElement
 } from 'react';
-
-import * as Styled from './accordion-item.styled';
 import { ChevronCircleIcon } from 'src/assets';
+
 import { Colors } from 'src/style/colors';
+import * as Styled from './accordion-item.styled';
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
 	children: JSX.Element;
@@ -27,6 +29,17 @@ export const AccordionItem = (props: AccordionItemProps) => {
 		chevronColor = Colors.BLACK,
 		...rest
 	} = props;
+	const childrenRef = useRef<
+		HTMLDivElement & { getClientHeight: () => number | undefined }
+	>(null);
+	const clonedChildren = cloneElement(children, { ref: childrenRef });
+	const [childrenHeight, setChildrenHeight] = useState<number | undefined>(undefined);
+
+	useLayoutEffect(() => {
+		if (childrenRef.current) {
+			setChildrenHeight(childrenRef.current.clientHeight);
+		}
+	}, [childrenRef]);
 
 	return (
 		<Styled.AccordionItem data-testid='accordion_item_test_id' {...rest}>
@@ -36,7 +49,9 @@ export const AccordionItem = (props: AccordionItemProps) => {
 					<ChevronCircleIcon fill={chevronColor} width={24} height={24} />
 				</Styled.ChevronDirection>
 			</Styled.AccordionKey>
-			{isCollapsed ? null : <Styled.Children>{children}</Styled.Children>}
+			{isCollapsed ? null : (
+				<Styled.Children height={childrenHeight}>{clonedChildren}</Styled.Children>
+			)}
 		</Styled.AccordionItem>
 	);
 };

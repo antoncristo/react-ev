@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const AccordionItem = styled.div`
 	box-sizing: border-box;
 
 	width: 100%;
-	height: fit-content;
 `;
 
 export const AccordionKey = styled.div`
@@ -15,7 +14,6 @@ export const AccordionKey = styled.div`
 	justify-content: space-between;
 
 	width: 100%;
-	height: fit-content;
 	padding: 6px;
 	margin-bottom: 12px;
 
@@ -34,12 +32,25 @@ export const ChevronDirection = styled.div<{ isCollapsed: boolean }>`
 	transform: rotateZ(${({ isCollapsed }) => (isCollapsed ? 0 : 180)}deg);
 `;
 
-export const Children = styled.div`
+const appear = () => keyframes`
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+`;
+
+export const Children = styled.div<{ height: number | undefined }>`
 	box-sizing: border-box;
 	width: 100%;
-	height: fit-content;
 	padding: 6px;
+	height: ${({ height }) => height ?? 0};
 
 	border-radius: ${({ theme }) => theme.decorators.borderRadius};
 	box-shadow: ${({ theme }) => theme.decorators.boxShadow};
+
+	animation-name: ${appear()};
+	animation-duration: 200ms;
+	animation-timing-function: ease;
 `;
