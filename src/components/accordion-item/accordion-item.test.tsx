@@ -6,7 +6,7 @@ import { AccordionItem } from './accordion-item';
 describe('<AccordionItem/> component', () => {
 	test('renders correctly', () => {
 		customRender(
-			<AccordionItem isCollapsed accordionKey='accordion key' onKeyClick={() => null}>
+			<AccordionItem accordionKey='accordion key'>
 				<div>block 1</div>
 			</AccordionItem>
 		);
