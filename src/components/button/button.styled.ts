@@ -20,4 +20,15 @@ export const Button = styled.button`
 	:focus {
 		outline: 2px solid ${({ theme }) => theme.palette.base.black};
 	}
+
+	:disabled {
+		cursor: not-allowed;
+		color: ${({ theme }) => theme.palette.base.white};
+		background-color: ${({ theme }) => theme.palette.base.grey};
+
+		:hover {
+			color: ${({ theme }) => theme.palette.base.white};
+			background-color: ${({ theme }) => theme.palette.base.grey};
+		}
+	}
 `;

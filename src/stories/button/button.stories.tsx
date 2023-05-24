@@ -21,6 +21,7 @@ export const Basic: Story = {
 				onClick={() => {
 					alert('click event');
 				}}
+				disabled
 			>
 				Simple Button
 			</Button>
