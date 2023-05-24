@@ -16,7 +16,6 @@ export const Basic: Story = {
 	render(args) {
 		return (
 			<AccordionItem
-				{...args}
 				accordionKey={
 					<TextField fontSize='1.2rem' numberOfLines={1} fontWeight='bold'>
 						Accordion Item 1
@@ -27,8 +26,6 @@ export const Basic: Story = {
 			</AccordionItem>
 		);
 	},
-	args: {
-		isCollapsed: true
-	},
+	args: {},
 	argTypes: {}
 };
