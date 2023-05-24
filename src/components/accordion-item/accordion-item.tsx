@@ -32,11 +32,9 @@ export const AccordionItem = (props: AccordionItemProps) => {
 	} = props;
 
 	const [innerIsCollapsed, setInnerISCollapsed] = useState(true);
-	const isControlledCollapse = isCollapsed && setIsCollapsed;
+	const isControlledCollapse = isCollapsed !== undefined && setIsCollapsed;
 
-	const childrenRef = useRef<
-		HTMLDivElement & { getClientHeight: () => number | undefined }
-	>(null);
+	const childrenRef = useRef<HTMLDivElement>(null);
 	const clonedChildren = cloneElement(children, { ref: childrenRef });
 	const [childrenHeight, setChildrenHeight] = useState<number | undefined>(undefined);
 
@@ -52,11 +50,12 @@ export const AccordionItem = (props: AccordionItemProps) => {
 		});
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(() => {
 		if (childrenRef.current) {
 			setChildrenHeight(childrenRef.current.clientHeight);
 		}
-	}, [childrenRef]);
+	});
 
 	return (
 		<Styled.AccordionItem data-testid='accordion_item_test_id' {...rest}>
