@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const AccordionItem = styled.div`
 	box-sizing: border-box;
@@ -32,25 +32,38 @@ export const ChevronDirection = styled.div<{ isCollapsed: boolean }>`
 	transform: rotateZ(${({ isCollapsed }) => (isCollapsed ? 0 : 180)}deg);
 `;
 
-const appear = () => keyframes`
+const appear = (height: number | undefined) => keyframes`
 	0%{
 		opacity: 0;
+		height: 0;
+	}
+	70%{
+		height: ${height}px;
 	}
 	100%{
 		opacity: 1;
 	}
 `;
 
-export const Children = styled.div<{ height: number | undefined }>`
+export const Children = styled.div<{ isVisible: boolean; height: number | undefined }>`
 	box-sizing: border-box;
+
+	${({ isVisible }) =>
+		isVisible
+			? css`
+					display: block;
+			  `
+			: css`
+					display: none;
+			  `}
+
 	width: 100%;
 	padding: 6px;
-	height: ${({ height }) => height ?? 0};
 
 	border-radius: ${({ theme }) => theme.decorators.borderRadius};
 	box-shadow: ${({ theme }) => theme.decorators.boxShadow};
 
-	animation-name: ${appear()};
-	animation-duration: 200ms;
-	animation-timing-function: ease;
+	animation-name: ${({ height }) => height && appear(height)};
+	animation-duration: 0.4s;
+	animation-timing-function: linear;
 `;
