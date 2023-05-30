@@ -1,4 +1,4 @@
-import React, { type Dispatch, type SetStateAction, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 
 import { Backdrop } from '../backdrop';
 
@@ -7,12 +7,11 @@ import * as Styled from './modal.styled';
 export interface ModalProps {
 	children: ReactNode;
 	isOpen: boolean;
-	setIsOpen: Dispatch<SetStateAction<boolean>>;
 	backdropColor?: string;
 }
 
 export const Modal = (props: ModalProps) => {
-	const { isOpen, setIsOpen, children, backdropColor } = props;
+	const { isOpen, children, backdropColor } = props;
 
 	return isOpen ? (
 		<>
