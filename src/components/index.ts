@@ -3,6 +3,7 @@ export { Alert, type AlertProps } from './alert';
 export { Backdrop, type BackdropProps } from './backdrop';
 export { Button, type ButtonProps } from './button';
 export { Checkbox, type CheckboxProps } from './checkbox';
+export { Draggable, type DraggableProps } from './draggable';
 export { Dropdown, type DropdownProps } from './dropdown';
 export { HighestTooltip, type HighestTooltipProps } from './highest-tooltip';
 export { IconButton, type IconButtonProps } from './icon-button';
