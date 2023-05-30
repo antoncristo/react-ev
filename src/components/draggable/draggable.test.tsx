@@ -5,8 +5,12 @@ import { Draggable } from './draggable';
 
 describe('<Draggable/> component', () => {
 	test('renders correctly', () => {
-		customRender(<Draggable />);
-		// Implement - const component = screen.getByTestId()
-		// Implement - expect(component).toBeInTheDocument();
+		customRender(
+			<Draggable onDragOver={() => null} onDragStart={() => null} onDrop={() => null}>
+				<div>draggable item</div>
+			</Draggable>
+		);
+		const component = screen.getByTestId('draggable_test_id');
+		expect(component).toBeInTheDocument();
 	});
 });

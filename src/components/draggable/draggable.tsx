@@ -28,6 +28,7 @@ export const Draggable = (props: DraggableProps) => {
 
 	return (
 		<Styled.Draggable
+			data-testid='draggable_test_id'
 			data-value={value}
 			data-index={index}
 			draggable
