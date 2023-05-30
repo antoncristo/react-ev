@@ -14,7 +14,7 @@ export const TextField = styled.p<{
 	font-family: ${({ theme }) => theme.typography.fontFamily};
 	font-weight: ${({ fontWeight }) => fontWeight};
 	font-size: ${({ fontSize, theme }) => fontSize ?? theme.typography.fontSize};
-	line-height: ${({ lineHeight, theme }) => lineHeight ?? 1};
+	line-height: ${({ lineHeight, theme }) => lineHeight ?? 1.1};
 	text-align: start;
 
 	overflow: hidden;
