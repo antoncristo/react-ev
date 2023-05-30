@@ -10,6 +10,7 @@ export { Input, type InputProps } from './input';
 export { Label, type LabelProps } from './label';
 export { List, type ListProps } from './list';
 export { Loader, type LoaderProps } from './loader';
+export { Modal, type ModalProps } from './modal';
 export {
 	Table,
 	type TableProps,
