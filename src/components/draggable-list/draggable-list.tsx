@@ -1,9 +1,9 @@
 import React, { type DragEventHandler } from 'react';
 
 import { List, type ListProps } from '../list';
+import { Draggable } from '../draggable/draggable';
 
 import * as Styled from './draggable-list.styled';
-import { Draggable } from '../draggable/draggable';
 
 export interface DraggableListProps<T extends object> {
 	listProps: ListProps<T>;
