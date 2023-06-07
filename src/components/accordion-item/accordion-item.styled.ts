@@ -2,13 +2,11 @@ import styled, { css, keyframes } from 'styled-components';
 
 export const AccordionItem = styled.div`
 	box-sizing: border-box;
-
 	width: 100%;
 `;
 
 export const AccordionKey = styled.div`
 	box-sizing: border-box;
-
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
