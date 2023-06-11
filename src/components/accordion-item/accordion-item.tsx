@@ -21,6 +21,17 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
 	chevronColor?: string;
 }
 
+/**
+ * @description
+ * show and hide sections in an accordion form. Click the accordion key to collapse the content
+ * uncontrolled by default. To set as a controlled component, pass a state and a handler
+ *
+ * @param children any valid JSX component
+ * @param accordionKey the clickable key item (collapsing functionality)
+ * @param isCollapsed (optional) if passed, then the 'setIsCollapsed' is required to have a controlled state
+ * @param setIsCollapsed (optional) if passed, then the 'isCollapsed' state is required to have a controlled state
+ * @param chevronColor (optional) set the color of the chevron icon
+ */
 export const AccordionItem = (props: AccordionItemProps) => {
 	const {
 		children,
