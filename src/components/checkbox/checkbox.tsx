@@ -22,6 +22,16 @@ export interface CheckboxProps extends HTMLAttributes<HTMLDivElement> {
 	};
 }
 
+/**
+ * @description custom checkbox input
+ *
+ * @param isChecked input's state representor
+ * @param onCheckboxSelect a method to handle the change of the input
+ * @param value input's value to read on the onChange handler
+ * @param inputID (optional) in order to sync with an outer label, pass this prop
+ * @param width (optional) default to 12px aspect ration 1/1
+ * @param colors (optional) and object to style the colors of the checkbox
+ */
 export const Checkbox = (props: CheckboxProps) => {
 	const {
 		isChecked,
