@@ -11,6 +11,15 @@ export interface DraggableProps {
 	index?: number;
 }
 
+/**
+ * @description a wrapper that allows any element to be draggable
+ * @param children the content that would be draggable
+ * @param onDragStart DragEventHandler
+ * @param onDragOver DragEventHandler
+ * @param onDrop DragEventHandler
+ * @param value (optional) a string to be used as the data-value attribute on the drag events
+ * @param index (optional) a string to be used as the data-index attribute on the drag events
+ */
 export const Draggable = (props: DraggableProps) => {
 	const { value, children, onDragStart, onDragOver, onDrop, index } = props;
 
