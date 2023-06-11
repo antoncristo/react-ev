@@ -1,5 +1,5 @@
 export { AccordionItem, type AccordionItemProps } from './accordion-item';
-export { Alert, type AlertProps } from './alert';
+export { Alert, type AlertProps, type AlertVariant } from './alert';
 export { Backdrop, type BackdropProps } from './backdrop';
 export { Button, type ButtonProps } from './button';
 export { Checkbox, type CheckboxProps } from './checkbox';
