@@ -11,6 +11,12 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children: ReactNode;
 }
 
+/**
+ * @description button component with custom children
+ *
+ * @param children any valid ReactNode element
+ * @param onClick MouseEventHandler
+ */
 export const Button = (props: ButtonProps) => {
 	const { children, onClick, ...rest } = props;
 	return (
