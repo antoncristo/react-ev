@@ -12,6 +12,15 @@ export interface DropdownProps<T extends object> extends HTMLAttributes<HTMLDivE
 	footer?: JSX.Element;
 }
 
+/**
+ * @description click on the context, show a dropdown box with any content (list,header/footer elements)
+ *
+ * @param context the element that triggers the dropdown visibility
+ * @param listConfig configure the inner list, see ListProps
+ * @param position define the position of the dropdown, relative to the context element
+ * @param head (optional) a top component placeholder
+ * @param footer (optional) a bottom component placeholder
+ */
 export const Dropdown = <T extends object>(props: DropdownProps<T>) => {
 	const {
 		context,
