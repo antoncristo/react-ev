@@ -11,6 +11,15 @@ export interface TextFieldProps extends HTMLAttributes<HTMLParagraphElement> {
 	numberOfLines?: number;
 }
 
+/**
+ * @description text field element with built in customization
+ * @param children text string content
+ * @param numberOfLines (optional) clap the text box with a desired number of lines and break them with ellipsis
+ * @param fontSize (optional)
+ * @param fontWeight (optional)
+ * @param lineHeight (optional)
+ * @param maxWidth (optional)
+ */
 export const TextField = (props: TextFieldProps) => {
 	const {
 		children,

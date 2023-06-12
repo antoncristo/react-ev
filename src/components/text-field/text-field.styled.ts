@@ -12,7 +12,7 @@ export const TextField = styled.p<{
 	width: 100%;
 	max-width: ${({ maxWidth }) => maxWidth};
 	font-family: ${({ theme }) => theme.typography.fontFamily};
-	font-weight: ${({ fontWeight }) => fontWeight};
+	font-weight: ${({ fontWeight }) => fontWeight ?? 'normal'};
 	font-size: ${({ fontSize, theme }) => fontSize ?? theme.typography.fontSize};
 	line-height: ${({ lineHeight, theme }) => lineHeight ?? 1.1};
 	text-align: start;
