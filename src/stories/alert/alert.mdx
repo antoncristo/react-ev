@@ -7,16 +7,26 @@ import { Meta } from '@storybook/blocks';
 <h3>props</h3>
 <ul>
 	<li>
-		<b>text</b> - alert text
+		<b>isOpen</b> - represents the visibility state
 	</li>
 	<li>
-		<b>title</b> - alert title
+		<b>setIsOpen</b> - a boolean toggler that control the visibility state
 	</li>
 	<li>
 		<b>variant</b> - alert coloring - success\error\warning\default (depends on theme base
 		colors)
 	</li>
 	<li>
-		<b>textConfig</b> - TextField props to edit the text string
+		<b>text</b> - alert's text, the message that is being rendered
+	</li>
+	<li>
+		<b>title</b> - (optional) the title of the popup
+	</li>
+	<li>
+		<b>textConfig</b> - (optional) inner text props, allows a modification of the message
+		text style (see TextField props)
+	</li>
+	<li>
+		<b>backdropColor</b> - (optional) set the color of the viewport background
 	</li>
 </ul>

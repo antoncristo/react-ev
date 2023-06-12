@@ -21,6 +21,13 @@ export interface TableProps<T extends object> extends HTMLAttributes<HTMLDivElem
 	selectSetup?: (selectedRow: SelectedRow<T>) => void;
 }
 
+/**
+ * @description generic table element
+ * @param data the data array of any object type
+ * @param columns a configuration array of columns (see Column type)
+ * @param sortSetup (optional) if sort needed, sort configuration object is required
+ * @param selectSetup (optional) if row selection functionality needed, define this handler
+ */
 export const Table = <T extends object>(props: TableProps<T>) => {
 	const { data, columns, sortSetup, selectSetup, ...rest } = props;
 	const sortArgs = {

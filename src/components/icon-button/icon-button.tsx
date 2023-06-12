@@ -11,6 +11,14 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 	iconPosition?: 'start' | 'end';
 }
 
+/**
+ * @description a button component with a text (optional) and and an icon
+ * @param icon an icon element ogf the button
+ * @param onClick MouseEventHandler
+ * @param text (optional) the text of the button
+ * @param iconPosition (optional) allows to place the icon at the start or at the end of the text
+ * @param gap (optional) defines the spacing between the text and the icon
+ */
 export const IconButton = (props: IconButtonProps) => {
 	const { text, icon, onClick, iconPosition = 'end', gap, ...rest } = props;
 

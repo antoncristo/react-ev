@@ -12,6 +12,14 @@ export interface HighestTooltipProps extends HTMLAttributes<HTMLDivElement> {
 	justifyContent?: 'flex-start' | 'center' | 'flex-end';
 }
 
+/**
+ * @description a top level, fixed, tooltip box. When hovering a specific element, a top level box will appear
+ * @param tip the message of the tooltip
+ * @param isVisible the state that handles the visibility of the tooltip
+ * @param textConfig configure the tip text style, see TextFieldProps
+ * @param position (optional) considering a row view of the viewport, decide the position of the tooltip
+ * @param justifyContent (optional) considering a column view of the tooltip box, decide the position of the text
+ */
 export const HighestTooltip = (props: HighestTooltipProps) => {
 	const {
 		tip,

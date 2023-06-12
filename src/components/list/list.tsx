@@ -11,6 +11,16 @@ export interface ListProps<T extends object> extends HTMLAttributes<HTMLUListEle
 	onEndReachedHandler?: Function;
 }
 
+/**
+ * @description renders a list with a custom list item
+ * @param list the data array to be rendered
+ * @param itemKey a key of the data object to be used as reacts key prop in the mapped array
+ * @param renderItem a render function, receives the data item and returns it's JSX
+ * @param gap (optional) the gap between the list items
+ * @param height (optional) the hight of the list (allows a scroll behavior of the list)
+ * @param onEndReachedHandler (optional) a function to be fired when the scrolled list reached it's last element (good for infinite scrolling functionality)
+ *
+ */
 export const List = <T extends object>(props: ListProps<T>) => {
 	const {
 		renderItem,

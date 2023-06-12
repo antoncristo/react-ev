@@ -10,6 +10,13 @@ export interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
 	textConfig?: Omit<TextFieldProps, 'children'>;
 }
 
+/**
+ * @description a label with configurable text style
+ * @param label the text of the label
+ * @param htmlFor the id of the label to be synced with an input
+ * @param textConfig configure the label text style, see TextFieldProps
+ *
+ */
 export const Label = (props: LabelProps) => {
 	const { label, htmlFor, textConfig } = props;
 

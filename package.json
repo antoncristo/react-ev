@@ -1,6 +1,6 @@
 {
 	"name": "@antoncristo/react-ev",
-	"version": "0.16.49",
+	"version": "0.16.50",
 	"description": "react components library",
 	"scripts": {
 		"test": "vitest -c ./src/vite.config.ts --run",

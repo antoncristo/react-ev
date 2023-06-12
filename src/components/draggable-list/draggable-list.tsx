@@ -12,6 +12,13 @@ export interface DraggableListProps<T extends object> {
 	onDrop: DragEventHandler;
 }
 
+/**
+ * @description a list that can be reordered using drag and drop api
+ * @param listProps see ListProps type
+ * @param onDragStart DragEventHandler
+ * @param onDragOver DragEventHandler
+ * @param onDrop DragEventHandler
+ */
 export const DraggableList = <T extends object>(props: DraggableListProps<T>) => {
 	const { listProps, onDragOver, onDragStart, onDrop } = props;
 	const { renderItem, list, ...restOfListProps } = listProps;

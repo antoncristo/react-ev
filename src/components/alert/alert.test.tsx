@@ -5,7 +5,9 @@ import { Alert } from './alert';
 
 describe('<Alert/> component', () => {
 	test('renders correctly', () => {
-		customRender(<Alert text='alert text' variant='default' />);
+		customRender(
+			<Alert text='alert text' variant='default' isOpen setIsOpen={() => null} />
+		);
 		const component = screen.getByTestId('alert_test_id');
 		expect(component).toBeInTheDocument();
 	});
