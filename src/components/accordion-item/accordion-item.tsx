@@ -71,6 +71,7 @@ export const AccordionItem = (props: AccordionItemProps) => {
 	return (
 		<Styled.AccordionItem data-testid='accordion_item_test_id' {...rest}>
 			<Styled.AccordionKey
+				data-testid='accordion_item_key_test_id'
 				onClick={isControlledCollapse ? controlledSetState : innerSetState}
 			>
 				{accordionKey}
@@ -81,6 +82,7 @@ export const AccordionItem = (props: AccordionItemProps) => {
 				</Styled.ChevronDirection>
 			</Styled.AccordionKey>
 			<Styled.Children
+				data-testid='accordion_item_children_test_id'
 				isVisible={!(isControlledCollapse ? isCollapsed : innerIsCollapsed)}
 				height={childrenHeight}
 			>
