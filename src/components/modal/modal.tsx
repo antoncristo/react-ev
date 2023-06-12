@@ -10,6 +10,12 @@ export interface ModalProps {
 	backdropColor?: string;
 }
 
+/**
+ * @description a top level, fixed container (z-index 201)
+ * @param children the content of the modal, any element
+ * @param isOpen the state that represents the visibility of the of the modal
+ * @param backdropColor (optional) the color of the backdrop behind the modal
+ */
 export const Modal = (props: ModalProps) => {
 	const { isOpen, children, backdropColor } = props;
 
