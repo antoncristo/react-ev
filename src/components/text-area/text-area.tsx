@@ -8,6 +8,12 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 	resize?: Resize;
 }
 
+/**
+ * @description a text area element
+ * @param resize (optional) 'none' | 'both' | 'horizontal' | 'vertical'
+ * @param htmlAttributes standard textarea input attributes
+ *
+ */
 export const TextArea = (props: TextAreaProps) => {
 	const { resize = 'none', ...rest } = props;
 
