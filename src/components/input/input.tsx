@@ -9,6 +9,11 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 	isValid?: boolean;
 }
 
+/**
+ * @description a restricted type text input
+ * @param type text types are 'text' | 'email' | 'password'
+ * @param htmlAttributes standard html input attributes
+ */
 export const Input = (props: InputProps) => {
 	const { type, isValid = true, ...rest } = props;
 
