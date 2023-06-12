@@ -8,6 +8,12 @@ export interface LoaderProps {
 	variant?: 'lifeline' | 'pulse';
 }
 
+/**
+ * @description a loader component with two variants - pulse/lifeline
+ * @param variant (optional) 'lifeline' | 'pulse'
+ * @param bgc (optional) background color
+ * @param pc (optional) lifeline color
+ */
 export const Loader = ({ variant = 'lifeline', bgc, pc }: LoaderProps) =>
 	variant === 'lifeline' ? (
 		<Styled.LifelineContainer data-testid='loader_test_id' bgc={bgc} pc={pc}>
