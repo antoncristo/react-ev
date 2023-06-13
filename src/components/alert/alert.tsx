@@ -54,6 +54,7 @@ export const Alert = (props: AlertProps) => {
 			<Styled.Alert data-testid='alert_test_id' borderColor={variant}>
 				{title ? (
 					<Styled.Title
+						data-testid='alert_title_test_id'
 						maxWidth={_maxWidth}
 						fontWeight='bold'
 						fontSize='1.2rem'
@@ -67,7 +68,11 @@ export const Alert = (props: AlertProps) => {
 						{text}
 					</TextField>
 				</Styled.AlertTextBox>
-				<Styled.ClearButton width={_maxWidth} onClick={isOpenHandler}>
+				<Styled.ClearButton
+					data-testid='alert_button_test_id'
+					width={_maxWidth}
+					onClick={isOpenHandler}
+				>
 					<TextField fontWeight='bold'>{'OK'.toUpperCase()}</TextField>
 				</Styled.ClearButton>
 			</Styled.Alert>
