@@ -63,6 +63,7 @@ export const Checkbox = (props: CheckboxProps) => {
 			{...rest}
 		>
 			<Styled.IconWrapper
+				data-testid='checkbox_checkmark_test_id'
 				backgroundColor={colors.box}
 				htmlFor={inputID ?? _inputID}
 				isVisible={isChecked}
@@ -71,6 +72,7 @@ export const Checkbox = (props: CheckboxProps) => {
 				<CheckmarkIcon fill={colors.marker} width={width} height={width} />
 			</Styled.IconWrapper>
 			<input
+				data-testid='checkbox_input_test_id'
 				onChange={onInputChange}
 				value={value}
 				id={inputID ?? _inputID}
