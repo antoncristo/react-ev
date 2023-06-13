@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { customRender } from 'src/tests/setup-tests';
 import { Dropdown } from './dropdown';
 
@@ -36,6 +36,55 @@ describe('<Dropdown/> component', () => {
 				position={{}}
 			/>
 		);
-		// Implement - expect(component).toBeInTheDocument();
+
+		const component = screen.getByTestId('dropdown_test_id');
+		expect(component).toBeInTheDocument();
+	});
+
+	test('initially the dropdown box is hidden', () => {
+		customRender(
+			<Dropdown
+				context={<div>dropdown</div>}
+				listConfig={{
+					list: storyList,
+					renderItem: (item: StoryList) => (
+						<div style={{ borderBottom: '1px solid black', width: '200px' }}>
+							{item.storyName}
+						</div>
+					),
+					itemKey: 'id'
+				}}
+				position={{}}
+			/>
+		);
+
+		const component = screen.queryByTestId('dropdown_box_test_id');
+		expect(component).not.toBeInTheDocument();
+	});
+
+	test('if user clicked the context, the dropdown is visible and hidden again on blur', () => {
+		customRender(
+			<Dropdown
+				context={<div>dropdown</div>}
+				listConfig={{
+					list: storyList,
+					renderItem: (item: StoryList) => (
+						<div style={{ borderBottom: '1px solid black', width: '200px' }}>
+							{item.storyName}
+						</div>
+					),
+					itemKey: 'id'
+				}}
+				position={{}}
+			/>
+		);
+
+		const contextComponent = screen.getByTestId('dropdown_context_test_id');
+		fireEvent.focus(contextComponent);
+		const dropdownBoxComponent = screen.queryByTestId('dropdown_box_test_id');
+		expect(dropdownBoxComponent).toBeInTheDocument();
+
+		fireEvent.blur(contextComponent);
+		expect(dropdownBoxComponent).not.toBeInTheDocument();
 	});
 });

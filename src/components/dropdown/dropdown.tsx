@@ -43,12 +43,21 @@ export const Dropdown = <T extends object>(props: DropdownProps<T>) => {
 	};
 
 	return (
-		<Styled.Dropdown {...rest}>
-			<Styled.Dropper tabIndex={-1} onFocus={onContextClick} onBlur={onClickOutside}>
+		<Styled.Dropdown data-testid='dropdown_test_id' {...rest}>
+			<Styled.Dropper
+				data-testid='dropdown_context_test_id'
+				tabIndex={-1}
+				onFocus={onContextClick}
+				onBlur={onClickOutside}
+			>
 				{context}
 			</Styled.Dropper>
 			{isDropdownOpen ? (
-				<Styled.AbsoluteDropdown style={{ ...style, ...position }} className={className}>
+				<Styled.AbsoluteDropdown
+					data-testid='dropdown_box_test_id'
+					style={{ ...style, ...position }}
+					className={className}
+				>
 					{head}
 					<List {...listConfig} />
 					{footer}
