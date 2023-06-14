@@ -6,7 +6,7 @@ import { Modal } from './modal';
 describe('<Modal/> component', () => {
 	test('renders correctly', () => {
 		customRender(
-			<Modal isOpen setIsOpen={() => null}>
+			<Modal isOpen>
 				<div>modal content</div>
 			</Modal>
 		);
