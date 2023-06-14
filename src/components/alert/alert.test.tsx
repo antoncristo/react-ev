@@ -1,8 +1,8 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { customRender } from 'src/tests/setup-tests';
 import { Alert } from './alert';
-import { vi } from 'vitest';
 
 describe('<Alert/> component', () => {
 	test('renders correctly', () => {

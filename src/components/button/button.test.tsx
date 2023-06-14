@@ -1,8 +1,8 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { customRender } from 'src/tests/setup-tests';
 import { Button } from './button';
-import { vi } from 'vitest';
 
 describe('<Button/> component', () => {
 	const buttonLabel = 'Test Button';
