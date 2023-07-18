@@ -1,6 +1,6 @@
 {
 	"name": "@antoncristo/react-ev",
-	"version": "0.17.0",
+	"version": "0.17.1",
 	"description": "react components library",
 	"scripts": {
 		"test": "vitest -c ./src/vite.config.ts --run",
@@ -63,7 +63,7 @@
 	"peerDependencies": {
 		"react": ">=16.8.0",
 		"react-dom": ">=16.8.0",
-		"styled-components": "^5.1.1"
+		"styled-components": ">=5.1.1"
 	},
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
